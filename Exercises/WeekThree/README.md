@@ -13,8 +13,8 @@ Solutions are available in file `solutions.md`
 1. Implement a function `foo` that has void return and takes as input `int& a` and multiplies this input by 10.
 2. Implement a function `foo2` that has void return and takes as input `const int& a` and prints out the value of a.
 3. Implement a function `foo3` that does the same thing as `foo` but with as input `const& int a`. Does this compile? Why? Why not?
-4. What is the point of const references?
-5. When should you use pass by value `int a` and when should you pass by reference `int& a` when creating functions?
+5. What is the point of const references?
+6. When should you use pass by value `int a` and when should you pass by reference `int& a` when creating functions?
 
 
 ##Problem Two: References & Standard library
