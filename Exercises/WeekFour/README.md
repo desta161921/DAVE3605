@@ -2,43 +2,45 @@
 
 Feedback on these excercises is very much appreciated. Send mail to one of the lecturers or to Aryan at aryannm@gmail.com
 
-Solutions are available in file `solutions.md`
-
+Solutions are available in file `solutions.md`. This week has a long list of problems, it is not expected that you finish these in 2 hours.
 
 ##Problem X: (Repetition)
-1. Write a program in C++ that asks for 10 integer inputs from the user and finds both the max and min.
-2. Write the above program but this time store the integer inputs in a container (a plain c int array or  c++ std::vector>.
+Write a program that asks the user to enter temperatures for a week, store them in a vector, then print min, max and average.
+Try to do this in C++ (no printf or scanf).
 
-##Problem One: (References)
-1. Implement a function `foo` that has void return and takes as input `int& a` and multiplies this input by 10.
-2. Implement a function `foo2` that has void return and takes as input `const int& a` and prints out the value of a.
-3. Implement a function `foo3` that does the same thing as `foo` but with as input `const& int a`. Does this compile? Why? Why not?
-5. What is the point of const references?
-6. When should you use pass by value `int a` and when should you pass by reference `int& a` when creating functions?
+##Problem One - Some Pointers
+1. Write a program that creates two variables each of type `char, int, float, double` and create pointer variables
+that point to their content.
+2. Do the above, but this time print out the pointer values, what do you notice here? (hint size)
+3. Write a function that takes two int pointers and changes their value to 1.
+4. Write a function called `calculate_area_square` that takes 3 int pointer parameters, the first one is a pointer
+to a width variable, the second a pointer to a length variable and the third a pointer to an area. The function has no return (void) but stores the calculated area in the third parameter.
+
+##Problem Two - More Pointers
+1. Create an empty int pointer `ìnt* a` and try to prints its value, what happens? Why?
+2. Do problem 1.4 again, but this time, make it so that the value of width and height is not modifiable inside the function.
+3. Do problem 1.1 again, but this time also make a pointer to the pointer. Can you think of any reason why we would want a pointer to a pointer? What about pointer to a pointer to a pointer?
+
+##Problem Three - Arrays
+1. Create an array of ints, and fill the array with values from 1 inclusive to 10 inclusive. 
+2. Think of two different ways of getting the value at index 3, which one do you think is better?
+3. Try to print out element 13 in the array above, what happens? Why do you think?
+4. Create a function that takes an array of integers and prints every value using both of the methods above. You might have to give it two parameters, one for the array and another for the size.
+5. Create an array of ints using `new` that has space for 20 values and fill the values in a reverse forloop without using indices. What do you have to always remember when you use `new`? (Haven't gone into this in detail yet)
+6. So far we have mostly done the C way of using arrays, try to find out how you would send an array by reference in C++, implement this newfound knowledge in a function that takes an array of ints and prints out every value.
+
+##Problem Four - Strings
+C strings are just arrays of characters.
+1. Create a char array that has room for the word hello.
+2. Create a char array of unspecified size and fill it with a word (Hint [])
+3. So far you have created single words, how would you go about creating  an array of words?
+4. Create an array of two words, the first word being "Hello" and the second "World"
+5. Create a string using `std::string` that contains "Hello World". Compare with what you did above.
 
 
-##Problem Two: References & Standard library
-Implement the first program of Problem X using std::vector. Reason about which of the functions should use pass by value, pass by reference and pass by const reference.
+##Extra
+C/C++ puts a lot of trust in you as the programmer when you use pointers, they are powerful but also errorprone.
+We will explore some of its powers.
 
-1. Create a function that as input takes the vector you just created and prints out every other value.
-2. Create a function that as input takes the vector you just created and prints out the mix and max values, 
-use standard library functions for sorting! (use google).
-
-###Extra: Sorting 
-Create a function that takes as input the vector you just created and sort it by a custom sorter. Ie when you decide to sort a vector it gets sorted from smallest to largest. But suppose you want to sort by evenness. Eg the numbers `1,22,17,3,6`
-will get sorted into even numbers followed by odd numbers `6,22,3,1,17`. If you research the custom sorter in C++ you will find that you can sort it however you like.
-
-
-##Problem Three: Alphabet frequency
-Write a C++ program that count the total occurence of each letter in a given string. For example for the input 
-"Hello World" the output should be. It is up to you how you want to implement this but the input should be std::string.
-I will hint at the fact that there are standard library functions that can help you count.
-```c++
-H: 1
-W: 1
-d: 1
-e: 1
-l: 3
-o: 2
-r: 1
-```
+A color can be represented by a set of four values ranging between 0-255, each respectively representing a 
+value for red, green, blue, alpha (https://en.wikipedia.org/wiki/RGBA_color_space), this means that an RGBA color can be packed inside a 4-byte value, like an unsigned int like so `unsigned int color = 0xRRGGBBAA;`, while the 0-255 values can be packed inside an unsigned char like so `unsigned char red = 0xFF`. Try to create a pointer to the the different parts of `color`, to red, green, blue and alpha, so that if you want to only change the blue part of the color you can change the value of this blue pointer! (hint: cast)
