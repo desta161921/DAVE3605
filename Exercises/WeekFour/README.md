@@ -31,6 +31,7 @@ to a width variable, the second a pointer to a length variable and the third a p
 
 ##Problem Four - Strings
 C strings are just arrays of characters.
+
 1. Create a char array that has room for the word hello.
 2. Create a char array of unspecified size and fill it with a word (Hint [])
 3. So far you have created single words, how would you go about creating  an array of words?
