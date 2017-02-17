@@ -33,13 +33,40 @@ See code, nothing exciting here, and please dont use pointers to pointers, they 
 
 As to why we would want a pointer to pointer? (C) classic example is `char*` which translates to "list of letters" eg a word and `char**` which translates to "list of words" eg a sentence and `char***` which translates to "list of sentences" etc...
 
-###Extra - Sorting
-The comment is commented well enough I think, try to write out how it works on paper and pencil to understand it well. Of note here is the keyword `auto`, it is a feature of modern C++ that lets you ommit the typename, it is automatically figured out. In this case we use what is called a lambda function as our sorter. Notice that we use pass by reference, so we change the original vector.
-
-Do try to experiment with different sorters of your own!
-
 ## Problem Three
-Solution found in `problem_three.cpp`
-This problem can be solved in multiple ways, but I am a big fan of not reinventing the wheel (once I learn how the wheel works) so the solution provided here uses only library methods.
+Solution found in `problemthree.cpp`
 
-Of note here is the use of `std::set` it works much like `std::vector` but it does not insert a value if it already exists in the set, which is very handy for getting only unique letters.
+### Part I
+Nothing special here, just syntax, check code.
+### Part II
+The different ways are listed in the code, there is no difference except syntax, I prefer`a[2]` which is easier to read than `*(a+2)`.
+### Part III
+Accessing element 13 (index 12) is an index out of bounds mistake, the compiler doesn't warn me (g++ version 6.3.1
+) and the problem even runs fine! But the value I get is totally random. This is another example of undefined behavior. It might crash, it might print junk, it might create a black hole.
+### Part IV
+See code, nothing special here, except that we have to specify the size of the array as the second parameter, else the function doesn't know where the function starts or ends.
+### Part V
+See code, we allocate a chunk of memory the size of 20 ints and assign it to the arr pointer then we iterate in reverse from 19 down to 0 using the derefence operator to access every element of the array.
+### Part VI
+Type safety is a big thing in C++ and as such there is special C++ syntax for passing an array of constant size (not a pointer!!!), see code. Notice that the "not better way" doesn't work on anything else except array of size 10 integers while the "better way" works on anything! (but is not something we have learned about, this is called a template in c++)
+
+
+##Problem Four
+Solution found in `problemfour.cpp`
+## Part I & Part II
+Nothing special here, see code.
+### Part III
+A sentence is an array of words. We cannot use `char sentence[][] = {"Hello", "World"}` unfortunately,
+we can say "figure out for me how many words I will use but I will tell you that each word is at most 10 characters long" for the program to compile.
+
+### Part IV
+See above. Now we have specifically told that we can hold max 2 words.
+
+### Part V
+This is beautiful by comparison to what we did above. `std::string` is much easier to use and much clearer, please don't use C-style string.
+
+
+## Extra
+Since this is an extra I have chosen to introduce the keyword typedef, which lets us pretend we created a new type (in this case `RGBA`) which isn't really a new type but `unsigned int` but that is too long to write and not as descriptive as `RGBA`.
+
+The solution is pretty straight-forward, we know that an unsigned int holds 4 bytes, so if we use a `char*` that points to that unsigned int then we can increment it 4 times to hold all 4 RGBA values (since char is 1 byte)
