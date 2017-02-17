@@ -16,7 +16,7 @@ int main(){
      *
      */
     int* a;
-    std::cout<<*a<<std::endl;
+    std::cout<<"Value of uninitialized int pointer: " <<*a<<std::endl;
     return 0;
 
     /**
