@@ -69,6 +69,7 @@ Before we go ahead it might be of value to read the document `http://www.learncp
 
 ##Problem Six - Composition
 Refer to lecture for more details.
+
 1. Create a class called `Wheel` which has data members `type` and `diamaeter` decide if they should be int/string etc for yourself. Create an apropiate constructor. Create setter and getter for both type and diameter.
 2. Create a class called `Car` which has data members `model`, `milage` and either an array of `Wheel`s or a `std::vector<Wheel>` of wheels. Which one do you think is better? The car should only have 4 wheels, and index 0 shuld be frontleft wheel, index 1 should be frontright, index 2 backleft, index 3 backright.
 3. Create functions for setting and getting the model and mileage of this car.
