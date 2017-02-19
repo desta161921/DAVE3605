@@ -29,7 +29,10 @@ Refer to lecture for details.
 Person aryan{"Aryan", "Naqid", 28};
  aryan.print();
 ```
-The output should be ```Hi, my name is: Aryan Naqid, age 28```.
+The output should be 
+```
+Hi, my name is: Aryan Naqid, age 28
+```
 3. So far so good, but this time make the name,lastname and age members private in the struct. What happens then with the program you already had? Does it compile? Why not? How can you fix this? (Hint: constructor)
 4. What is the point of making something private, or public?
 5. Create functions inside your struct for getting and setting the variables name, lastname and age. Eg for the age
