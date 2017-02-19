@@ -65,6 +65,8 @@ Before we go ahead it might be of value to read the document `http://www.learncp
 
 1. Read the document linked above.
 2. Create the person class from the previous problems using header file `person.h` and cpp file `person.cpp`
+
+
 ##Problem Six - Composition
 Refer to lecture for more details.
 1. Create a class called `Wheel` which has data members `type` and `diamaeter` decide if they should be int/string etc for yourself. Create an apropiate constructor. Create setter and getter for both type and diameter.
