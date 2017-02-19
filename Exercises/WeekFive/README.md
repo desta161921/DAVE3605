@@ -25,9 +25,10 @@ Refer to lecture for details.
 3. Everytime we allocate dynamic memory (whenever we use new) we have to clean up the memory we allocated when it is no longer used. Create a program where you demonstrate this. What happens if we don't clean up?
 ##Problem Three - Structs
 1. Create a struct called `Person` that has 3 member variables, name, lastname and age, of type string, string and int respectively.
-2. Create a function inside the `Person` struct called `print()` that prints out name,lastname and age of this person. Eg with ```c++
+2. Create a function inside the `Person` struct called `print()` that prints out name,lastname and age of this person. Eg with 
+```c++
 Person aryan{"Aryan", "Naqid", 28};
- aryan.print();
+aryan.print();
 ```
 The output should be 
 ```
