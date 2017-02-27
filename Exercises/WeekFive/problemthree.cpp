@@ -48,5 +48,9 @@ int main(){
 
 	Person* p = new Person{"Aryan", "Naqid", 28};
 	p->print();
+
+    std::cout<<"Bare minimum space for a person with uninitialied name (since it can vary):"<<std::endl;
+    std::cout<<sizeof(Person)<<std::endl;
+
 	return 0;
 }
