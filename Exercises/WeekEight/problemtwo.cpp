@@ -1,9 +1,10 @@
+
 #include <iostream>
 #include <vector>
 
 class Zombie {
     public:
-        void act()
+        virtual void act()
         {
             std::cout<<"Zombie Attack!"<<std::endl;
         }
@@ -24,16 +25,9 @@ class FeralZombie : virtual public Zombie{
 class ArmoredFeralZombie : public ArmoredZombie, public FeralZombie {
     public:
         void act(){
-            ArmoredZombie::act();
             std::cout<<"Armored Feral Attack!"<<std::endl;
         }
 };
-
-/**
-void provokeAttack(Zombie z){
-    z.act();
-}
-**/
 
 void provokeAttack(Zombie& z){
     z.act();
